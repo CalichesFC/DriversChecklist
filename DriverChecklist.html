@@ -106,8 +106,13 @@
   </div>
 
   <h2>Vehicle & Trailer Check-Out</h2>
-  <form action="#" method="POST" enctype="multipart/form-data">
+  
+  <form action="https://formsubmit.co/YOUR-EMAIL@EXAMPLE.COM" method="POST" enctype="multipart/form-data">
     
+    <input type="hidden" name="_subject" value="New Trailer Check-Out Form Submitted!">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="YOUR_WEBSITE_URL_HERE">
+
     <label for="vehicle">Select Truck:</label>
     <select id="vehicle" name="vehicle" required>
       <option value="" disabled selected>Choose a truck...</option>

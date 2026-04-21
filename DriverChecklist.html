@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile Check-Out Form</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    padding: 20px;
+    margin: 0;
+  }
+  .form-container {
+    background-color: #ffffff;
+    max-width: 550px;
+    margin: auto;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  .logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .logo-container img {
+    max-width: 250px;
+    height: auto;
+  }
+  h2 {
+    color: #c53a74; /* Caliche's Pink */
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 0;
+  }
+  label {
+    font-weight: bold;
+    margin-top: 15px;
+    display: block;
+    color: #333333;
+  }
+  select, input[type="text"], input[type="number"], input[type="date"], textarea, input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #ffffff;
+  }
+  input[type="file"] {
+    padding: 9px;
+  }
+  .checkbox-section-title {
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    color: #4a68b1; /* Caliche's Blue */
+    border-bottom: 2px solid #f0f4f8;
+    padding-bottom: 5px;
+  }
+  .checkbox-group {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 10px;
+  }
+  .checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+  }
+  .checkbox-group label {
+    font-weight: normal;
+    display: inline;
+    margin-top: 0;
+  }
+  .checkbox-item {
+    margin-bottom: 12px;
+  }
+  button {
+    background-color: #c53a74; /* Caliche's Pink */
+    color: #ffffff;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 6px;
+    margin-top: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  button:hover {
+    background-color: #a32f5f;
+  }
+</style>
+</head>
+<body>
+
+<div class="form-container">
+  
+  <div class="logo-container">
+    <img src="Catering-logo.PNG" alt="ONE SWEET CELEBRATION Caliche's CATERING">
+  </div>
+
+  <h2>Vehicle & Trailer Check-Out</h2>
+  <form action="#" method="POST" enctype="multipart/form-data">
+    
+    <label for="vehicle">Select Truck:</label>
+    <select id="vehicle" name="vehicle" required>
+      <option value="" disabled selected>Choose a truck...</option>
+      <option value="2500">2500</option>
+      <option value="3500">3500</option>
+      <option value="Caliche's Cruiser">Caliche's Cruiser</option>
+    </select>
+
+    <label for="trailer">Select Trailer:</label>
+    <select id="trailer" name="trailer" required>
+      <option value="" disabled selected>Choose a trailer...</option>
+      <option value="Scoopy">Scoopy</option>
+      <option value="Poochie">Poochie</option>
+      <option value="N/A">N/A (No Trailer)</option>
+    </select>
+
+    <label for="destination">Destination (City/Location):</label>
+    <input type="text" id="destination" name="destination" placeholder="e.g., Hatch, Silver City, Winery" required>
+
+    <label for="purpose">Trip Purpose / Event Type:</label>
+    <input type="text" id="purpose" name="purpose" placeholder="e.g., Mobile Vending, Wedding, Youth Group" required>
+
+    <label for="mileage">Starting Mileage:</label>
+    <input type="number" id="mileage" name="mileage" placeholder="Enter truck odometer reading" required>
+
+    <div class="checkbox-section-title">Safety & Mechanical</div>
+    <div class="checkbox-group">
+      <div class="checkbox-item">
+        <input type="checkbox" id="tires" name="tires" required>
+        <label for="tires">Tire pressure and tread checked (Truck & Trailer)</label>
+      </div>
+      <div class="checkbox-item">
+        <input type="checkbox" id="lights" name="lights" required>
+        <label for="lights">Headlights, brake lights, and turn signals working</label>
+      </div>
+      <div class="checkbox-item">
+        <input type="checkbox" id="hitch" name="hitch">
+        <label for="hitch">Hitch pinned, chains crossed, electrical connected (If towing)</label>
+      </div>
+    </div>
+
+    <div class="checkbox-section-title">Interior & Equipment</div>
+    <div class="checkbox-group">
+      <div class="checkbox-item">
+        <input type="checkbox" id="fridge" name="fridge">
+        <label for="fridge">Refrigeration/Freezer doors securely latched</label>
+      </div>
+      <div class="checkbox-item">
+        <input type="checkbox" id="ingredients" name="ingredients">
+        <label for="ingredients">Custard mix, toppings, and dispensers secured</label>
+      </div>
+      <div class="checkbox-item">
+        <input type="checkbox" id="safety_gear" name="safety_gear" required>
+        <label for="safety_gear">Fire extinguisher and First Aid kit present</label>
+      </div>
+    </div>
+
+    <div class="checkbox-section-title">Presentation & Brand Standards</div>
+    <div class="checkbox-group">
+      <div class="checkbox-item">
+        <input type="checkbox" id="cab" name="cab" required>
+        <label for="cab">Cab is clean, floors clear, and trash removed</label>
+      </div>
+      <div class="checkbox-item">
+        <input type="checkbox" id="bed" name="bed" required>
+        <label for="bed">Truck bed is organized and equipment is secured</label>
+      </div>
+    </div>
+
+    <label for="damage">Damage Report (if any):</label>
+    <textarea id="damage" name="damage" rows="3" placeholder="Describe any new dents, scratches, or missing equipment..."></textarea>
+
+    <label for="photos">Upload Photos (Hitch, Tires, Damage, etc.):</label>
+    <input type="file" id="photos" name="photos" accept="image/*" multiple>
+
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date" required>
+
+    <label for="signature">Shift Leader Signature:</label>
+    <input type="text" id="signature" name="signature" placeholder="Type your full name" required>
+
+    <button type="submit">Submit Check-Out</button>
+  </form>
+</div>
+
+</body>
+</html>
